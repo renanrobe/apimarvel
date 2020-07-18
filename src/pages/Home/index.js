@@ -18,13 +18,18 @@ const Home = () => {
     handleGetHeroes()
   }, []);
 
-  const { characters } = useSelector(state => state);
+  const { characters, favorites } = useSelector(state => state);
 
   return (
     <div>
       {characters?.map(item =>
-        <span key={item.id} onClick={() => handleAddFavorite(item.id)}>{item.name} - {item.favorite ? 'favorito': 'nao favorito'}<br /></span>
+        <span key={item.id} onClick={() => handleAddFavorite(item.id)}>
+          {item.name} -
+          {favorites.includes(item.id) ? 'favorito': ''}
+          <br />
+        </span>
       )}
+      {favorites}
     </div>
   );
 }
