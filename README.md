@@ -1,12 +1,19 @@
+Teste de Front-end Luizalabs
+==============
 Esse projeto foi criado com [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Demonstração
 
-Para rodar o projeto é necessário dar os seguintes comandos:
+Vou subir no github.io pages. Ainda não publiquei.
+http://luizalabs-front.github.io
 
-### `npm istall`
-logo após
-### `npm start`
+### Instalação
 
-Para rodar os testes:
-### `npm test`
+1. Faça o clone deste projeto com `https://github.com/renanrobe/luizalabs-front.git`
+2. Entre na pasta do projeto e instale as dependências com `npm install`
+3. Rode a aplicação com `node start`
+
+### Testando a aplicação
+
+1. Abra o browser e visite a página `http://localhost:3000`
+1. Para ver a cobertura de testes use `npm test`
