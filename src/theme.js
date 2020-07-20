@@ -13,10 +13,10 @@ const theme = {
     large: "3em"
   },
   widths: {
-    small: '576px',
-    medium: '768px',
-    Large: '992px',
-    extraLarge: '1200px'
+    small: "576px",
+    medium: "768px",
+    Large: "992px",
+    extraLarge: "1200px"
   }
 };
 

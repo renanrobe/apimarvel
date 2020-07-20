@@ -1,7 +1,7 @@
 import { Request } from '../services';
 
 export const getHeroes = () => {
-  return Request('/v1/public/characters', 'limit=10')
+  return Request('/v1/public/characters', { limit: 30 })
   .then(result => {
     if (result?.code === 200) {
       return result?.data
@@ -11,9 +11,10 @@ export const getHeroes = () => {
 };
 
 export const findHeroes = (searchString) => {
-  return Request(`/v1/public/characters?nameStartsWith=${searchString}`)
+  return Request('/v1/public/characters', { nameStartsWith: searchString })
   .then(result => {
     if (result?.code === 200) {
+      console.log('searchString', result?.data)
       return result?.data
     }
   })

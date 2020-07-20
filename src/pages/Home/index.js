@@ -1,27 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getHeroes } from '../../actions';
+import { getHeroes, findHeroes } from '../../actions';
 import { ReactComponent as Logo } from '../../static/logo.svg';
-import { ReactComponent as HeartOn } from '../../static/ico-heart-true.svg';
-import { ReactComponent as HeartOff } from '../../static/ico-heart-false.svg';
+import { ReactComponent as IconSearch } from '../../static/ico-search.svg';
+import { ReactComponent as IconSuperHero } from '../../static/ico-superhero.svg';
+import { ReactComponent as IconHeartOn } from '../../static/ico-heart-true.svg';
+import { ReactComponent as IconToggleOff } from '../../static/ico-toggle-off.svg';
+import { ReactComponent as IconToggleOn } from '../../static/ico-toggle-on.svg';
+
 import Footer from '../../components/Footer';
+import BoxHome from '../../components/BoxHome';
 import {
   Container,
   Header,
   Title,
   Subtitle,
   Content,
-  Box,
-  Name
+  List,
+  Search,
+  Toolbar,
+  Sort,
+  Toggle,
+  Favorites
 } from './home.css';
 
 const Home = () => {
   const dispatch = useDispatch();
-
-  const [showFavortes, setCount] = useState(false);
+  const [showFavortes, setshowFavortes] = useState(false);
+  const [sortHeroes, setSortHeroes] = useState(false);
+  const [termSearch, setTermSearch] = useState("");
 
   const handleShowFavortes = () => {
-    setCount(!showFavortes);
+    setshowFavortes(!showFavortes);
   }
 
   const handleGetHeroes = async () => {
@@ -29,8 +39,18 @@ const Home = () => {
     dispatch({ type: 'GET_HEROES', payload: resultHeroes });
   }
 
-  const handleAddFavorite = (id) => {
-    dispatch({ type: 'ADD_FAVORITE_HEROES', payload: id });
+  const handleSearchHeroes = async (itemSearch) => {
+    setTermSearch(itemSearch)
+    const resultHeroes =  await findHeroes(termSearch);
+    dispatch({ type: 'GET_HEROES', payload: resultHeroes });
+  }
+  
+  const handleSortHeroes = (characters) => {
+    if(sortHeroes) {
+      return characters?.sort((a, b) => a.name.localeCompare(b.name))
+    } else {
+      return characters?.sort((a, b) => b.name.localeCompare(a.name))
+    }
   }
 
   useEffect(() => {
@@ -38,7 +58,7 @@ const Home = () => {
   }, []);
 
   const { characters, favorites } = useSelector(state => state);
-
+  
   return (
     <>
       <Container>
@@ -49,28 +69,35 @@ const Home = () => {
             Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama -
             e aqueles que você descobrirá em breve!
           </Subtitle>
-          <span onClick={() => handleShowFavortes()}>exibir apenas favoritos</span>
+          <Search>
+            <IconSearch />
+            <input
+              placeholder="Procure por heróis"
+              value={termSearch} 
+              type="text"
+              onChange={e => handleSearchHeroes(e.target.value)}
+            />
+          </Search>
         </Header>
 
         <Content>
-          {characters?.map(item =>
-            showFavortes && favorites.includes(item.id) ? <Box key={item.id}>
-              <img src={`${item.thumbnail.path}/portrait_uncanny.${item.thumbnail.extension}`} />
-              
-              <div>
-                <Name>a-{item.name}</Name>
-                <div>{favorites.includes(item.id) ? <HeartOn /> : <HeartOff onClick={() => handleAddFavorite(item.id)} />}</div>
-              </div>
-            </Box> : 
-            !showFavortes && <Box key={item.id}>
-              <img src={`${item.thumbnail.path}/portrait_uncanny.${item.thumbnail.extension}`} />
-              
-              <div>
-                <Name>{item.name}</Name>
-                <div>{favorites.includes(item.id) ? <HeartOn /> : <HeartOff onClick={() => handleAddFavorite(item.id)} />}</div>
-              </div>
-            </Box>
-          )}
+          <Toolbar>
+            <p>Encontramos 20 heróis</p>
+            <div>
+              <Sort onClick={() => setSortHeroes(!sortHeroes)}><IconSuperHero /> Ordenar por nome - A/Z</Sort>
+              <Toggle onClick={() => handleShowFavortes()}>
+                { showFavortes ? <IconToggleOn /> : <IconToggleOff /> }
+              </Toggle>
+              <Favorites><IconHeartOn /> Somente favoritos</Favorites>
+            </div>
+          </Toolbar>
+
+          <List>
+            {handleSortHeroes(characters)?.map(item =>
+              showFavortes && favorites.includes(item.id) ? <BoxHome key={item.id} item={item} favorites={favorites} /> :
+              !showFavortes && <BoxHome key={item.id} item={item} favorites={favorites} />
+            )}
+          </List>
         </Content>
       </Container>
       <Footer />

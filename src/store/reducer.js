@@ -24,6 +24,7 @@ const SAVE_STATE = (data) => {
 export default (state = GET_STATE(), action) => {
   switch (action.type) {
     case 'GET_HEROES':
+      console.log(action?.payload?.results)
       SAVE_STATE({
         ...state,
         characters: action?.payload?.results
@@ -34,15 +35,29 @@ export default (state = GET_STATE(), action) => {
         characters: action?.payload?.results
       };
     case 'ADD_FAVORITE_HEROES':
-      SAVE_STATE({
+      const controlFavorites = () => {
+        const newFavorites = [ ...state.favorites ];
+        
+        if(!state.favorites.includes(action?.payload)){
+          if( state.favorites.length >= 5 ) {
+            alert('Só é possível adicionar 5 favoritos!');
+          } else {
+            newFavorites.push(action?.payload);
+          }
+          return newFavorites
+        } else {
+          newFavorites.splice(newFavorites.indexOf(action?.payload), 1);
+          return newFavorites
+        }
+      }
+
+      const saveData = {
         ...state,
-        favorites: !state.favorites.includes(action?.payload) ? [...state.favorites, action?.payload] : [...state.favorites]
-      })
-      
-      return {
-        ...state,
-        favorites: !state.favorites.includes(action?.payload) ? [...state.favorites, action?.payload] : [...state.favorites]
+        favorites: controlFavorites()
       };
+
+      SAVE_STATE(saveData);
+      return saveData
     default:
       return state;
   }
