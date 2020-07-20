@@ -9,7 +9,7 @@ https://renanrobe.github.io/luizalabs-front/
 
 1. Faça o clone deste projeto com `https://github.com/renanrobe/luizalabs-front.git`
 2. Entre na pasta do projeto e instale as dependências com `npm install`
-3. Rode a aplicação com `node start`
+3. Rode a aplicação com `npm start`
 
 ### Testando a aplicação
 
