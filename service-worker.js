@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/luizalabsfront/precache-manifest.a14cd2b669efd25de13d20c3dfb70db5.js"
+  "/luizalabsfront/precache-manifest.c06cfbe0f9cbc8a028e44e3246dc6d74.js"
 );
 
 self.addEventListener('message', (event) => {

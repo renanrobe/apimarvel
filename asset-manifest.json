@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/luizalabsfront/static/css/main.5981ab45.chunk.css",
-    "main.js": "/luizalabsfront/static/js/main.ad131aaa.chunk.js",
-    "main.js.map": "/luizalabsfront/static/js/main.ad131aaa.chunk.js.map",
+    "main.css": "/luizalabsfront/static/css/main.b9f5b5fd.chunk.css",
+    "main.js": "/luizalabsfront/static/js/main.b24d1fcf.chunk.js",
+    "main.js.map": "/luizalabsfront/static/js/main.b24d1fcf.chunk.js.map",
     "runtime-main.js": "/luizalabsfront/static/js/runtime-main.f68f5047.js",
     "runtime-main.js.map": "/luizalabsfront/static/js/runtime-main.f68f5047.js.map",
-    "static/js/2.d65625c9.chunk.js": "/luizalabsfront/static/js/2.d65625c9.chunk.js",
-    "static/js/2.d65625c9.chunk.js.map": "/luizalabsfront/static/js/2.d65625c9.chunk.js.map",
+    "static/js/2.288d916f.chunk.js": "/luizalabsfront/static/js/2.288d916f.chunk.js",
+    "static/js/2.288d916f.chunk.js.map": "/luizalabsfront/static/js/2.288d916f.chunk.js.map",
     "index.html": "/luizalabsfront/index.html",
-    "precache-manifest.a14cd2b669efd25de13d20c3dfb70db5.js": "/luizalabsfront/precache-manifest.a14cd2b669efd25de13d20c3dfb70db5.js",
+    "precache-manifest.c06cfbe0f9cbc8a028e44e3246dc6d74.js": "/luizalabsfront/precache-manifest.c06cfbe0f9cbc8a028e44e3246dc6d74.js",
     "service-worker.js": "/luizalabsfront/service-worker.js",
-    "static/css/main.5981ab45.chunk.css.map": "/luizalabsfront/static/css/main.5981ab45.chunk.css.map",
-    "static/js/2.d65625c9.chunk.js.LICENSE.txt": "/luizalabsfront/static/js/2.d65625c9.chunk.js.LICENSE.txt",
-    "static/media/ico-heart-false.61bd6eb8.svg": "/luizalabsfront/static/media/ico-heart-false.61bd6eb8.svg",
-    "static/media/ico-heart-true.8352c5c3.svg": "/luizalabsfront/static/media/ico-heart-true.8352c5c3.svg",
-    "static/media/ico-search.aeefa637.svg": "/luizalabsfront/static/media/ico-search.aeefa637.svg",
-    "static/media/ico-superhero.529229ac.svg": "/luizalabsfront/static/media/ico-superhero.529229ac.svg",
-    "static/media/ico-toggle-off.ebef5c3d.svg": "/luizalabsfront/static/media/ico-toggle-off.ebef5c3d.svg",
-    "static/media/ico-toggle-on.ddbb9fdd.svg": "/luizalabsfront/static/media/ico-toggle-on.ddbb9fdd.svg",
-    "static/media/logo.55c7f3ac.svg": "/luizalabsfront/static/media/logo.55c7f3ac.svg"
+    "static/css/main.b9f5b5fd.chunk.css.map": "/luizalabsfront/static/css/main.b9f5b5fd.chunk.css.map",
+    "static/js/2.288d916f.chunk.js.LICENSE.txt": "/luizalabsfront/static/js/2.288d916f.chunk.js.LICENSE.txt",
+    "static/media/ico-heart-false.0ad1e3ae.svg": "/luizalabsfront/static/media/ico-heart-false.0ad1e3ae.svg",
+    "static/media/ico-heart-true.148062e9.svg": "/luizalabsfront/static/media/ico-heart-true.148062e9.svg",
+    "static/media/ico-search.be88535e.svg": "/luizalabsfront/static/media/ico-search.be88535e.svg",
+    "static/media/ico-superhero.f78c6ac2.svg": "/luizalabsfront/static/media/ico-superhero.f78c6ac2.svg",
+    "static/media/ico-toggle-off.b3447ab5.svg": "/luizalabsfront/static/media/ico-toggle-off.b3447ab5.svg",
+    "static/media/ico-toggle-on.aab16b44.svg": "/luizalabsfront/static/media/ico-toggle-on.aab16b44.svg",
+    "static/media/logo.fec1f18d.svg": "/luizalabsfront/static/media/logo.fec1f18d.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f68f5047.js",
-    "static/js/2.d65625c9.chunk.js",
-    "static/css/main.5981ab45.chunk.css",
-    "static/js/main.ad131aaa.chunk.js"
+    "static/js/2.288d916f.chunk.js",
+    "static/css/main.b9f5b5fd.chunk.css",
+    "static/js/main.b24d1fcf.chunk.js"
   ]
 }
