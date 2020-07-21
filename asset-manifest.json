@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/luizalabsfront/static/css/main.b9f5b5fd.chunk.css",
-    "main.js": "/luizalabsfront/static/js/main.b24d1fcf.chunk.js",
-    "main.js.map": "/luizalabsfront/static/js/main.b24d1fcf.chunk.js.map",
+    "main.js": "/luizalabsfront/static/js/main.6f999633.chunk.js",
+    "main.js.map": "/luizalabsfront/static/js/main.6f999633.chunk.js.map",
     "runtime-main.js": "/luizalabsfront/static/js/runtime-main.f68f5047.js",
     "runtime-main.js.map": "/luizalabsfront/static/js/runtime-main.f68f5047.js.map",
     "static/js/2.288d916f.chunk.js": "/luizalabsfront/static/js/2.288d916f.chunk.js",
     "static/js/2.288d916f.chunk.js.map": "/luizalabsfront/static/js/2.288d916f.chunk.js.map",
     "index.html": "/luizalabsfront/index.html",
-    "precache-manifest.c06cfbe0f9cbc8a028e44e3246dc6d74.js": "/luizalabsfront/precache-manifest.c06cfbe0f9cbc8a028e44e3246dc6d74.js",
+    "precache-manifest.86277b381e967ad8abaf60ec1dc8151b.js": "/luizalabsfront/precache-manifest.86277b381e967ad8abaf60ec1dc8151b.js",
     "service-worker.js": "/luizalabsfront/service-worker.js",
     "static/css/main.b9f5b5fd.chunk.css.map": "/luizalabsfront/static/css/main.b9f5b5fd.chunk.css.map",
     "static/js/2.288d916f.chunk.js.LICENSE.txt": "/luizalabsfront/static/js/2.288d916f.chunk.js.LICENSE.txt",
@@ -24,6 +24,6 @@
     "static/js/runtime-main.f68f5047.js",
     "static/js/2.288d916f.chunk.js",
     "static/css/main.b9f5b5fd.chunk.css",
-    "static/js/main.b24d1fcf.chunk.js"
+    "static/js/main.6f999633.chunk.js"
   ]
 }
