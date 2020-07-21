@@ -58,7 +58,7 @@ const Home = () => {
   }, []);
 
   const { characters, favorites } = useSelector(state => state);
-  
+  console.log('characters', characters)
   return (
     <>
       <Container>
@@ -82,7 +82,7 @@ const Home = () => {
 
         <Content>
           <Toolbar>
-            <p>Encontramos 20 heróis</p>
+            <p>Encontramos {characters?.length > 0 ? characters.length: 0} heróis</p>
             <div>
               <Sort onClick={() => setSortHeroes(!sortHeroes)}><IconSuperHero /> Ordenar por nome - A/Z</Sort>
               <Toggle onClick={() => handleShowFavortes()}>

@@ -3,7 +3,11 @@ import theme from '../../theme';
 
 export const Container = styled.div`
   margin: 0 auto;
-  width: ${ theme.widths.extraLarge };
+  max-width: ${ theme.widths.extraLarge };
+
+  @media(max-width: ${theme.widths.extraLarge}) {
+    margin 0 50px;
+  }
 `;
 
 export const Header = styled.header`
@@ -30,8 +34,21 @@ export const Header = styled.header`
     export const List = styled.ul`
       display: grid;
       gap: 50px;
-      grid-template-columns: repeat(4, 1fr);;
+      grid-template-columns: repeat(4, 1fr);
       margin: 50px 0 100px;
+
+      @media(max-width: ${theme.widths.extraLarge}) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media(max-width: ${theme.widths.Large}) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media(max-width: ${theme.widths.medium}) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      
     `;
       export const Search = styled.div`
         background-color: ${ theme.colors.redLight };
@@ -68,6 +85,10 @@ export const Header = styled.header`
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media(max-width: ${theme.widths.extraLarge}) {
+          display: block;
+        }
 
         > div {
           display: flex;
