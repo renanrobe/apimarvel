@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.5981ab45.chunk.css",
-    "main.js": "/static/js/main.914fcdbc.chunk.js",
-    "main.js.map": "/static/js/main.914fcdbc.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.6cdea165.js",
-    "runtime-main.js.map": "/static/js/runtime-main.6cdea165.js.map",
-    "static/js/2.4fd2b4a1.chunk.js": "/static/js/2.4fd2b4a1.chunk.js",
-    "static/js/2.4fd2b4a1.chunk.js.map": "/static/js/2.4fd2b4a1.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.99d40ef4c582f96e9a10a409c7146e48.js": "/precache-manifest.99d40ef4c582f96e9a10a409c7146e48.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.5981ab45.chunk.css.map": "/static/css/main.5981ab45.chunk.css.map",
-    "static/js/2.4fd2b4a1.chunk.js.LICENSE.txt": "/static/js/2.4fd2b4a1.chunk.js.LICENSE.txt",
-    "static/media/ico-heart-false.61bd6eb8.svg": "/static/media/ico-heart-false.61bd6eb8.svg",
-    "static/media/ico-heart-true.8352c5c3.svg": "/static/media/ico-heart-true.8352c5c3.svg",
-    "static/media/ico-search.aeefa637.svg": "/static/media/ico-search.aeefa637.svg",
-    "static/media/ico-superhero.529229ac.svg": "/static/media/ico-superhero.529229ac.svg",
-    "static/media/ico-toggle-off.ebef5c3d.svg": "/static/media/ico-toggle-off.ebef5c3d.svg",
-    "static/media/ico-toggle-on.ddbb9fdd.svg": "/static/media/ico-toggle-on.ddbb9fdd.svg",
-    "static/media/logo.55c7f3ac.svg": "/static/media/logo.55c7f3ac.svg"
+    "main.css": "/luizalabs-front/static/css/main.5981ab45.chunk.css",
+    "main.js": "/luizalabs-front/static/js/main.7c996cc5.chunk.js",
+    "main.js.map": "/luizalabs-front/static/js/main.7c996cc5.chunk.js.map",
+    "runtime-main.js": "/luizalabs-front/static/js/runtime-main.2ad7c906.js",
+    "runtime-main.js.map": "/luizalabs-front/static/js/runtime-main.2ad7c906.js.map",
+    "static/js/2.25f8448e.chunk.js": "/luizalabs-front/static/js/2.25f8448e.chunk.js",
+    "static/js/2.25f8448e.chunk.js.map": "/luizalabs-front/static/js/2.25f8448e.chunk.js.map",
+    "index.html": "/luizalabs-front/index.html",
+    "precache-manifest.05b5283ca0545620dcbd6417a26be4a8.js": "/luizalabs-front/precache-manifest.05b5283ca0545620dcbd6417a26be4a8.js",
+    "service-worker.js": "/luizalabs-front/service-worker.js",
+    "static/css/main.5981ab45.chunk.css.map": "/luizalabs-front/static/css/main.5981ab45.chunk.css.map",
+    "static/js/2.25f8448e.chunk.js.LICENSE.txt": "/luizalabs-front/static/js/2.25f8448e.chunk.js.LICENSE.txt",
+    "static/media/ico-heart-false.61bd6eb8.svg": "/luizalabs-front/static/media/ico-heart-false.61bd6eb8.svg",
+    "static/media/ico-heart-true.8352c5c3.svg": "/luizalabs-front/static/media/ico-heart-true.8352c5c3.svg",
+    "static/media/ico-search.aeefa637.svg": "/luizalabs-front/static/media/ico-search.aeefa637.svg",
+    "static/media/ico-superhero.529229ac.svg": "/luizalabs-front/static/media/ico-superhero.529229ac.svg",
+    "static/media/ico-toggle-off.ebef5c3d.svg": "/luizalabs-front/static/media/ico-toggle-off.ebef5c3d.svg",
+    "static/media/ico-toggle-on.ddbb9fdd.svg": "/luizalabs-front/static/media/ico-toggle-on.ddbb9fdd.svg",
+    "static/media/logo.55c7f3ac.svg": "/luizalabs-front/static/media/logo.55c7f3ac.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6cdea165.js",
-    "static/js/2.4fd2b4a1.chunk.js",
+    "static/js/runtime-main.2ad7c906.js",
+    "static/js/2.25f8448e.chunk.js",
     "static/css/main.5981ab45.chunk.css",
-    "static/js/main.914fcdbc.chunk.js"
+    "static/js/main.7c996cc5.chunk.js"
   ]
 }
