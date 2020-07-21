@@ -24,7 +24,6 @@ const SAVE_STATE = (data) => {
 export default (state = GET_STATE(), action) => {
   switch (action.type) {
     case 'GET_HEROES':
-      console.log(action?.payload?.results)
       SAVE_STATE({
         ...state,
         characters: action?.payload?.results

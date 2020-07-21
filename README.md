@@ -3,7 +3,7 @@ Teste de Front-end Luizalabs
 Esse projeto foi criado com [Create React App](https://github.com/facebook/create-react-app).
 
 ### Demonstração
-https://renanrobe.github.io/luizalabs-front/
+https://renanrobe.github.io/luizalabsfront/
 
 ### Instalação
 

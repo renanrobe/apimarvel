@@ -21,7 +21,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://renanrobe.github.io/",
+  "homepage": "https://renanrobe.github.io/luizalabsfront",
   "eslintConfig": {
     "extends": "react-app"
   },
