@@ -3,6 +3,8 @@ import theme from '../../theme';
 
 export const Box = styled.li`
   position: relative;
+  max-width: 300px;
+  margin: 0 auto;
 
   &:before, &:after {
     content: '';

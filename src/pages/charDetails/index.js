@@ -33,7 +33,7 @@ const CharDetails = (props) => {
     dispatch({ type: 'GET_HERO', payload: resultHeroes });
   }
 
-  const handleAddFavorite = (id) => {
+  const handleControlFavorite = (id) => {
     dispatch({ type: 'ADD_FAVORITE_HEROES', payload: id });
   }
 
@@ -58,10 +58,10 @@ const CharDetails = (props) => {
               <Name>{ charDetail?.name }</Name>
               <Favorite>
                 {
-                  favorites.includes(charDetail?.id) ?
-                    <HeartOn onClick={() => handleAddFavorite(charDetail?.id)} />
+                   favorites.hasOwnProperty(charDetail?.id) ?
+                    <HeartOn onClick={() => handleControlFavorite(charDetail)} />
                     :
-                    <HeartOff onClick={() => handleAddFavorite(charDetail?.id)} />
+                    <HeartOff onClick={() => handleControlFavorite(charDetail)} />
                 }
               </Favorite>
             </ContentFlex>
@@ -76,14 +76,14 @@ const CharDetails = (props) => {
                   <LabelTitle>Quadrinhos</LabelTitle>
                   <ContentFlex>
                     <IconBook />
-                    <LabelValue>{charDetail?.comics.available}</LabelValue>
+                    <LabelValue>{charDetail?.comics?.available}</LabelValue>
                   </ContentFlex>
                 </div>
                 <div>
                   <LabelTitle>Filmes</LabelTitle>
                   <ContentFlex>
                     <IconVideo />
-                    <LabelValue>{charDetail?.series.available}</LabelValue>
+                    <LabelValue>{charDetail?.series?.available}</LabelValue>
                   </ContentFlex>
                 </div>
               </ContentFlex>

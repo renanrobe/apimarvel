@@ -30,10 +30,6 @@ const Home = () => {
   const [sortHeroes, setSortHeroes] = useState(false);
   const [termSearch, setTermSearch] = useState('');
 
-  const handleShowFavortes = () => {
-    setshowFavortes(!showFavortes);
-  }
-
   const handleGetHeroes = async () => {
     const resultHeroes =  await getHeroes();
     dispatch({ type: 'GET_HEROES', payload: resultHeroes });
@@ -41,6 +37,7 @@ const Home = () => {
 
   const handleSearchHeroes = async (event) => {
     if (event.key === 'Enter') {
+      setshowFavortes(false);
       const resultHeroes =  await getHeroes(termSearch);
       dispatch({ type: 'GET_HEROES', payload: resultHeroes });
     }
@@ -87,7 +84,7 @@ const Home = () => {
             <p>Encontramos {characters?.length > 0 ? characters.length: 0} heróis</p>
             <div>
               <Sort onClick={() => setSortHeroes(!sortHeroes)}><IconSuperHero /> Ordenar por nome - A/Z</Sort>
-              <Toggle onClick={() => handleShowFavortes()}>
+              <Toggle onClick={() => setshowFavortes(!showFavortes)}>
                 { showFavortes ? <IconToggleOn /> : <IconToggleOff /> }
               </Toggle>
               <Favorites><IconHeartOn /> Somente favoritos</Favorites>
@@ -96,9 +93,16 @@ const Home = () => {
 
           <List>
             {handleSortHeroes(characters)?.map(item =>
-              showFavortes && favorites.includes(item.id) ? <BoxHome key={item.id} item={item} favorites={favorites} /> :
               !showFavortes && <BoxHome key={item.id} item={item} favorites={favorites} />
             )}
+
+            {Object.keys(favorites).length > 0 ?
+              Object.keys(favorites).map((item, i) =>
+                showFavortes && <BoxHome key={favorites[item].id} item={favorites[item]} favorites={favorites} />
+              )
+            :
+              <li>Você não possui favoritos!</li>
+            }
           </List>
         </Content>
       </Container>

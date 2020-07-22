@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
   loading: false,
   characters: [],
-  favorites: [],
+  favorites: {},
   charDetail: {}
 }
 
@@ -30,7 +30,7 @@ export default (state = GET_STATE(), action) => {
 
       return {
         ...state,
-        characters: action?.payload?.results
+        characters: action?.  payload?.results
       };
     case 'GET_HERO':
         return {
@@ -38,25 +38,25 @@ export default (state = GET_STATE(), action) => {
           charDetail: action?.payload?.results[0]
         };
     case 'ADD_FAVORITE_HEROES':
-      const controlFavorites = () => {
-        const newFavorites = [ ...state.favorites ];
+      const controlFavorites = (data) => {
+        const newFavorites = { ...state.favorites };
         
-        if(!state.favorites.includes(action?.payload)){
-          if( state.favorites.length >= 5 ) {
+        if(!state.favorites.hasOwnProperty(data.id)){
+          if(Object.keys(state.favorites).length >= 5 ) {
             alert('Só é possível adicionar 5 favoritos!');
           } else {
-            newFavorites.push(action?.payload);
+            newFavorites[data.id]=data;
           }
           return newFavorites
         } else {
-          newFavorites.splice(newFavorites.indexOf(action?.payload), 1);
+          delete newFavorites[data.id]
           return newFavorites
         }
       }
 
       const saveData = {
         ...state,
-        favorites: controlFavorites()
+        favorites: controlFavorites(action?.payload)
       };
 
       SAVE_STATE(saveData);

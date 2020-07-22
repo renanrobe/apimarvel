@@ -12,23 +12,23 @@ const BoxHome = (props) => {
   const { item, favorites } = props;
   const dispatch = useDispatch();
 
-  const handleAddFavorite = (id) => {
+  const handleControlFavorite = (id) => {
     dispatch({ type: 'ADD_FAVORITE_HEROES', payload: id });
   }
   
   const urlImg = `${item.thumbnail.path}/portrait_uncanny.${item.thumbnail.extension}`;
-
+  
   return (
     <Box>
-      <a href={`/charDetails/${item.id}`}><img src={urlImg} alt={item.name} /></a>
+      <a href={`/luizalabsfront/#/charDetails/${item?.id}`}><img src={urlImg} alt={item.name} /></a>
       <div>
         <Name>{item.name}</Name>
         <Favorite>
           {
-            favorites.includes(item.id) ?
-              <HeartOn onClick={() => handleAddFavorite(item.id)} />
+            favorites.hasOwnProperty(item?.id) ?
+              <HeartOn onClick={() => handleControlFavorite(item)} />
               :
-              <HeartOff onClick={() => handleAddFavorite(item.id)} />
+              <HeartOff onClick={() => handleControlFavorite(item)} />
           }
         </Favorite>
       </div>
