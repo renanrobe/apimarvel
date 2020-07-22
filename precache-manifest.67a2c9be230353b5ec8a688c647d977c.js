@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1831eb6a1076436dbbbba51578dc52b5",
+    "revision": "5c5d83e00dba2a9f4aa08191af8794c9",
     "url": "/luizalabsfront/index.html"
   },
   {
-    "revision": "70b663d0d4086b464581",
+    "revision": "f97e6aae56e2671f8ebc",
     "url": "/luizalabsfront/static/css/main.b9f5b5fd.chunk.css"
   },
   {
-    "revision": "c7bc96556cfecec340a7",
-    "url": "/luizalabsfront/static/js/2.288d916f.chunk.js"
+    "revision": "f8576d39a41e65fe0a2d",
+    "url": "/luizalabsfront/static/js/2.c0b02392.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/luizalabsfront/static/js/2.288d916f.chunk.js.LICENSE.txt"
+    "url": "/luizalabsfront/static/js/2.c0b02392.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "70b663d0d4086b464581",
-    "url": "/luizalabsfront/static/js/main.17b66d9d.chunk.js"
+    "revision": "f97e6aae56e2671f8ebc",
+    "url": "/luizalabsfront/static/js/main.86f13e0d.chunk.js"
   },
   {
     "revision": "ced1335ee67707bedfb7",
     "url": "/luizalabsfront/static/js/runtime-main.f68f5047.js"
+  },
+  {
+    "revision": "32bf5cc4325bf1e5eea598fd547784d6",
+    "url": "/luizalabsfront/static/media/ico-book.32bf5cc4.svg"
   },
   {
     "revision": "0ad1e3aee93076f9e922ce6898a1f4bd",
@@ -30,6 +34,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "148062e99ff081e5b85f1cb0af01ad5f",
     "url": "/luizalabsfront/static/media/ico-heart-true.148062e9.svg"
+  },
+  {
+    "revision": "c96981e1af4ac246e0c77430705f39a5",
+    "url": "/luizalabsfront/static/media/ico-rating.c96981e1.svg"
   },
   {
     "revision": "be88535eb74143185015f8a9343855fd",
@@ -48,7 +56,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/luizalabsfront/static/media/ico-toggle-on.aab16b44.svg"
   },
   {
-    "revision": "fec1f18d77627f2b929d7123c6c379de",
-    "url": "/luizalabsfront/static/media/logo.fec1f18d.svg"
+    "revision": "a196f94863ca8548c606ada8f2a7f030",
+    "url": "/luizalabsfront/static/media/ico-video.a196f948.svg"
+  },
+  {
+    "revision": "60369301d1a7eee7895f1331f97f82a0",
+    "url": "/luizalabsfront/static/media/logo.60369301.svg"
   }
 ]);
