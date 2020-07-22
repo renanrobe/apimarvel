@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getHeroes, findHeroes } from '../../actions';
+import { getHeroes } from '../../actions';
 import { ReactComponent as Logo } from '../../static/logo.svg';
 import { ReactComponent as IconSearch } from '../../static/ico-search.svg';
 import { ReactComponent as IconSuperHero } from '../../static/ico-superhero.svg';
@@ -28,7 +28,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const [showFavortes, setshowFavortes] = useState(false);
   const [sortHeroes, setSortHeroes] = useState(false);
-  const [termSearch, setTermSearch] = useState("");
+  const [termSearch, setTermSearch] = useState('');
 
   const handleShowFavortes = () => {
     setshowFavortes(!showFavortes);
@@ -39,12 +39,13 @@ const Home = () => {
     dispatch({ type: 'GET_HEROES', payload: resultHeroes });
   }
 
-  const handleSearchHeroes = async (itemSearch) => {
-    setTermSearch(itemSearch)
-    const resultHeroes =  await findHeroes(termSearch);
-    dispatch({ type: 'GET_HEROES', payload: resultHeroes });
+  const handleSearchHeroes = async (event) => {
+    if (event.key === 'Enter') {
+      const resultHeroes =  await getHeroes(termSearch);
+      dispatch({ type: 'GET_HEROES', payload: resultHeroes });
+    }
   }
-  
+
   const handleSortHeroes = (characters) => {
     if(sortHeroes) {
       return characters?.sort((a, b) => a.name.localeCompare(b.name))
@@ -58,12 +59,12 @@ const Home = () => {
   }, []);
 
   const { characters, favorites } = useSelector(state => state);
-  console.log('characters', characters)
+
   return (
     <>
       <Container>
         <Header>
-          <Logo />
+          <a href="/luizalabsfront"><Logo /></a>
           <Title>Explore o universo</Title>
           <Subtitle>
             Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama -
@@ -75,7 +76,8 @@ const Home = () => {
               placeholder="Procure por heróis"
               value={termSearch} 
               type="text"
-              onChange={e => handleSearchHeroes(e.target.value)}
+              onChange={e => setTermSearch(e.target.value)}
+              onKeyDown={e => handleSearchHeroes(e)}
             />
           </Search>
         </Header>

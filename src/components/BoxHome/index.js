@@ -20,7 +20,7 @@ const BoxHome = (props) => {
 
   return (
     <Box>
-      <img src={urlImg} alt={item.name} />
+      <a href={`/charDetails/${item.id}`}><img src={urlImg} alt={item.name} /></a>
       <div>
         <Name>{item.name}</Name>
         <Favorite>

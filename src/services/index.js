@@ -8,6 +8,7 @@ class HttpRequest {
       const params_init = {
         ts: 1,
         apikey: PUBLIC_KEY,
+        limit: 20,
         hash: HASH
       }
       

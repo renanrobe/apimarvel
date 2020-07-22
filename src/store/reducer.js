@@ -2,8 +2,7 @@ const INITIAL_STATE = {
   loading: false,
   characters: [],
   favorites: [],
-  comics: null,
-  chars: [],
+  charDetail: {}
 }
 
 const GET_STATE = () => {
@@ -33,6 +32,11 @@ export default (state = GET_STATE(), action) => {
         ...state,
         characters: action?.payload?.results
       };
+    case 'GET_HERO':
+        return {
+          ...state,
+          charDetail: action?.payload?.results[0]
+        };
     case 'ADD_FAVORITE_HEROES':
       const controlFavorites = () => {
         const newFavorites = [ ...state.favorites ];

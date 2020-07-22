@@ -1,7 +1,7 @@
 import { Request } from '../services';
 
-export const getHeroes = () => {
-  return Request('/v1/public/characters', { limit: 20 })
+export const getHeroes = (searchString) => {
+  return Request('/v1/public/characters', searchString ? { nameStartsWith: searchString } : '')
   .then(result => {
     if (result?.code === 200) {
       return result?.data
@@ -10,8 +10,8 @@ export const getHeroes = () => {
   .catch(error => console.log(error));
 };
 
-export const findHeroes = (searchString) => {
-  return Request('/v1/public/characters', { nameStartsWith: searchString })
+export const getHero = (idHero) => {
+  return Request(`/v1/public/characters/${idHero}`)
   .then(result => {
     if (result?.code === 200) {
       return result?.data
