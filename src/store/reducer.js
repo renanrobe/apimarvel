@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 }
 
 const GET_STATE = () => {
-  let serializedState = localStorage.getItem('LOCAL_STORAGE_LUIZA');
+  let serializedState = localStorage.getItem('LOCAL_STORAGE_LUIZA_V2');
 
   if (serializedState === null) {
     return INITIAL_STATE
@@ -18,7 +18,7 @@ const GET_STATE = () => {
 
 const SAVE_STATE = (data) => {
   let dataJson = JSON.stringify(data);
-  localStorage.setItem('LOCAL_STORAGE_LUIZA', dataJson);
+  localStorage.setItem('LOCAL_STORAGE_LUIZA_V2', dataJson);
 }
 
 export default (state = GET_STATE(), action) => {
