@@ -50,7 +50,7 @@ const CharDetails = (props) => {
   }, []);
 
   const { charDetail, favorites, loading, charDetailComics } = useSelector(state => state);
-  const urlImg = (url) => `${url.path}/portrait_uncanny.${url.extension}`;
+  const urlImg = (url) => `${url?.path}/portrait_uncanny.${url?.extension}`;
 
   return (
     <>
