@@ -10,6 +10,10 @@ export const Container = styled.div`
     margin: 0 auto;
     max-width: ${ theme.widths.extraLarge };
 
+    @media(max-width: ${theme.widths.extraLarge}) {
+      margin: 0 50px;
+    }
+
     img {
       width: 200px;
     }
@@ -24,6 +28,27 @@ export const Container = styled.div`
       margin 0 50px;
     }
   `;
+    export const Loading = styled.div`
+      margin: 50px auto;
+      max-width: 200px;
+      
+      img {
+        width: 200px;
+      }
+    `;
+    export const InfosPhoto = styled.div`
+      display: flex;
+
+      img {
+        margin: 100px 0 0 150px;
+        height: 300px;
+        width: 300px;
+
+        @media(max-width: ${theme.widths.Large}) {
+          display: none;
+        }
+      }
+    `;
     export const HeroInfo = styled.div`
       display: block;
       max-width: 300px;
@@ -79,15 +104,47 @@ export const Container = styled.div`
         color: ${ theme.colors.grayDark};
         font-size: 20px;
         font-weight: bold;
+        margin-bottom: 20px;
       }
 
       ul {
         display: grid;
-        gap: 150px 50px;
+        gap: 50px 50px;
         grid-template-columns: repeat(6, 1fr);
-        padding: 100px 0;
+        padding: 40px 0;
+
+        @media(max-width: ${theme.widths.extraLarge}) {
+          grid-template-columns: repeat(5, 1fr);
+        }
+  
+        @media(max-width: ${theme.widths.Large}) {
+          grid-template-columns: repeat(4, 1fr);
+        }
+  
+        @media(max-width: ${theme.widths.medium}) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media(max-width: ${theme.widths.small}) {
+          grid-template-columns: repeat(2, 1fr);
+        }
 
         li {
+          max-width: 200px;
+
+          img {
+            height: 200px;
+            margin-bottom: 10px;
+            transition: all .2s linear;
+            width: 100%;
+          }
+
+          :hover {
+            img {
+              transform: scale3d(1.05, 1.05, 1);
+            }
+          } 
+
           span {
             color: ${ theme.colors.grayDark};
             font-size: 13px;
@@ -96,27 +153,5 @@ export const Container = styled.div`
           }
         }
       }
-
-      @media(max-width: ${theme.widths.extraLarge}) {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      @media(max-width: ${theme.widths.Large}) {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      @media(max-width: ${theme.widths.medium}) {
-        grid-template-columns: repeat(1, 1fr);
-      }
-    `;
-      
-    
-    
-
-
-
-    export const List = styled.ul`
-      
-      
     `;
       

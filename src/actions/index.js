@@ -19,3 +19,12 @@ export const getHero = (idHero) => {
   })
   .catch(error => console.log(error));
 };
+export const getHeroComics = (idHero) => {
+  return Request(`/v1/public/characters/${idHero}/comics`)
+  .then(result => {
+    if (result?.code === 200) {
+      return result?.data
+    }
+  })
+  .catch(error => console.log(error));
+};

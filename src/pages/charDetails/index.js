@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getHero } from '../../actions';
+import { getHero, getHeroComics } from '../../actions';
 import logo from '../../static/logo-green.png';
 import { ReactComponent as IconBook } from '../../static/ico-book.svg';
 import { ReactComponent as IconVideo } from '../../static/ico-video.svg';
 import { ReactComponent as IconRating } from '../../static/ico-rating.svg';
 import { ReactComponent as HeartOn } from '../../static/ico-heart-true.svg';
 import { ReactComponent as HeartOff } from '../../static/ico-heart-false.svg';
+import icoloading from '../../static/loading.gif';
 
 import Footer from '../../components/Footer';
 
@@ -22,6 +23,8 @@ import {
   LabelTitle,
   LabelValue,
   LastReleases,
+  Loading,
+  InfosPhoto
 } from './charDetails.css';
 
 const CharDetails = (props) => {
@@ -29,8 +32,13 @@ const CharDetails = (props) => {
   const dispatch = useDispatch();
   
   const handleGetHero = async () => {
+    dispatch({ type: 'START_LOADING' });
+
     const resultHeroes =  await getHero(params.charId);
     dispatch({ type: 'GET_HERO', payload: resultHeroes });
+
+    const resultComics =  await getHeroComics(params.charId);
+    dispatch({ type: 'GET_HERO_COMICS', payload: resultComics });
   }
 
   const handleControlFavorite = (id) => {
@@ -41,77 +49,96 @@ const CharDetails = (props) => {
     handleGetHero()
   }, []);
 
-  const { charDetail, favorites } = useSelector(state => state);
-  console.log(charDetail)
-  // const urlImg = (url) => `${item.thumbnail.path}/portrait_uncanny.${item.thumbnail.extension}`;
-  
+  const { charDetail, favorites, loading, charDetailComics } = useSelector(state => state);
+  const urlImg = (url) => `${url.path}/portrait_uncanny.${url.extension}`;
+
   return (
     <>
       <Container>
         <Header>
-          <a href="/luizalabsfront"><img src={logo} /></a>
-          <div>busca</div>
+          <a href="/luizalabsfront"><img src={logo} alt="Marvel" /></a>
         </Header>
         <Content>
-          <HeroInfo>
-            <ContentFlex justifyContent="space-between">
-              <Name>{ charDetail?.name }</Name>
-              <Favorite>
-                {
-                   favorites.hasOwnProperty(charDetail?.id) ?
-                    <HeartOn onClick={() => handleControlFavorite(charDetail)} />
-                    :
-                    <HeartOff onClick={() => handleControlFavorite(charDetail)} />
+          {!loading ?
+            <>
+              <InfosPhoto>
+                <HeroInfo>
+                  <ContentFlex justifyContent="space-between">
+                    <Name>{ charDetail?.name }</Name>
+                    <Favorite>
+                      {
+                        favorites.hasOwnProperty(charDetail?.id) ?
+                          <HeartOn onClick={() => handleControlFavorite(charDetail)} />
+                          :
+                          <HeartOff onClick={() => handleControlFavorite(charDetail)} />
+                      }
+                    </Favorite>
+                  </ContentFlex>
+
+                  <Description>
+                    { charDetail?.description !== "" ? charDetail?.description : "Esse personagem não possui descrição" }
+                  </Description>
+
+                  <div>
+                    <ContentFlex justifyContent="space-between">
+                      <div>
+                        <LabelTitle>Quadrinhos</LabelTitle>
+                        <ContentFlex>
+                          <IconBook />
+                          <LabelValue>{charDetail?.comics?.available}</LabelValue>
+                        </ContentFlex>
+                      </div>
+                      <div>
+                        <LabelTitle>Filmes</LabelTitle>
+                        <ContentFlex>
+                          <IconVideo />
+                          <LabelValue>{charDetail?.series?.available}</LabelValue>
+                        </ContentFlex>
+                      </div>
+                    </ContentFlex>
+
+                    <ContentFlex>
+                      <LabelTitle>Rating:</LabelTitle>
+                      <LabelValue><IconRating /></LabelValue>
+                    </ContentFlex>
+
+                    <ContentFlex>
+                      <LabelTitle>Último quadrinho:</LabelTitle>
+                      <LabelValue>13 fev. 2020</LabelValue>
+                    </ContentFlex>
+                  </div>
+                </HeroInfo>
+                <img src={urlImg(charDetail.thumbnail)} alt="Carregando..." />
+              </InfosPhoto>
+
+              <LastReleases>
+                <h3>Últimos lançamentos</h3>
+                
+                {!loading ?
+                  <>
+                    {charDetailComics?.length > 0 ?
+                      <ul>
+                        {
+                          charDetailComics?.map(item =>
+                            <li key={item.id}>
+                              <img src={urlImg(item.thumbnail)} alt={item.name} />
+                              <span>{item.title}</span>
+                            </li>
+                          ) 
+                        }
+                      </ul>
+                      :
+                      <span>Esse personagem não possui Quadrinhos!</span>
+                    }
+                  </>
+                :
+                  <Loading><img src={icoloading} alt="Carregando..." /></Loading>
                 }
-              </Favorite>
-            </ContentFlex>
-
-            <Description>
-              { charDetail?.description != "" ? charDetail?.description : "Esse personagem não possui descrição" }
-            </Description>
-
-            <div>
-              <ContentFlex justifyContent="space-between">
-                <div>
-                  <LabelTitle>Quadrinhos</LabelTitle>
-                  <ContentFlex>
-                    <IconBook />
-                    <LabelValue>{charDetail?.comics?.available}</LabelValue>
-                  </ContentFlex>
-                </div>
-                <div>
-                  <LabelTitle>Filmes</LabelTitle>
-                  <ContentFlex>
-                    <IconVideo />
-                    <LabelValue>{charDetail?.series?.available}</LabelValue>
-                  </ContentFlex>
-                </div>
-              </ContentFlex>
-
-              <ContentFlex>
-                <LabelTitle>Rating:</LabelTitle>
-                <LabelValue><IconRating /></LabelValue>
-              </ContentFlex>
-
-              <ContentFlex>
-                <LabelTitle>Último quadrinho:</LabelTitle>
-                <LabelValue>13 fev. 2020</LabelValue>
-              </ContentFlex>
-            </div>
-          </HeroInfo>
-
-          <LastReleases>
-            <h3>Últimos lançamentos</h3>
-
-            <ul>
-              {charDetail?.comics?.items.map(item =>
-                <li>
-                  {/* <img src={urlImg()} alt={item.name} /> */}
-                  <span>{item.name}</span>
-                </li>
-              )}
-            </ul>
-          </LastReleases>
+              </LastReleases>
+            </>
+          :
+            <Loading><img src={icoloading} alt="Carregando..." /></Loading>
+        }
         </Content>
       </Container>
       <Footer />

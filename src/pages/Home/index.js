@@ -7,6 +7,7 @@ import { ReactComponent as IconSuperHero } from '../../static/ico-superhero.svg'
 import { ReactComponent as IconHeartOn } from '../../static/ico-heart-true.svg';
 import { ReactComponent as IconToggleOff } from '../../static/ico-toggle-off.svg';
 import { ReactComponent as IconToggleOn } from '../../static/ico-toggle-on.svg';
+import icoloading from '../../static/loading.gif';
 
 import Footer from '../../components/Footer';
 import BoxHome from '../../components/BoxHome';
@@ -21,7 +22,8 @@ import {
   Toolbar,
   Sort,
   Toggle,
-  Favorites
+  Favorites,
+  Loading
 } from './home.css';
 
 const Home = () => {
@@ -32,12 +34,15 @@ const Home = () => {
 
   const handleGetHeroes = async () => {
     const resultHeroes =  await getHeroes();
+    
+    dispatch({ type: 'START_LOADING' });
     dispatch({ type: 'GET_HEROES', payload: resultHeroes });
   }
 
   const handleSearchHeroes = async (event) => {
     if (event.key === 'Enter') {
       setshowFavortes(false);
+      dispatch({ type: 'START_LOADING' });
       const resultHeroes =  await getHeroes(termSearch);
       dispatch({ type: 'GET_HEROES', payload: resultHeroes });
     }
@@ -55,7 +60,7 @@ const Home = () => {
     handleGetHeroes()
   }, []);
 
-  const { characters, favorites } = useSelector(state => state);
+  const { characters, favorites, loading } = useSelector(state => state);
 
   return (
     <>
@@ -84,26 +89,32 @@ const Home = () => {
             <p>Encontramos {characters?.length > 0 ? characters.length: 0} heróis</p>
             <div>
               <Sort onClick={() => setSortHeroes(!sortHeroes)}><IconSuperHero /> Ordenar por nome - A/Z</Sort>
-              <Toggle onClick={() => setshowFavortes(!showFavortes)}>
-                { showFavortes ? <IconToggleOn /> : <IconToggleOff /> }
-              </Toggle>
-              <Favorites><IconHeartOn /> Somente favoritos</Favorites>
+              <div>
+                <Toggle onClick={() => setshowFavortes(!showFavortes)}>
+                  { showFavortes ? <IconToggleOn /> : <IconToggleOff /> }
+                </Toggle>
+                <Favorites><IconHeartOn /> Somente favoritos</Favorites>
+              </div>
             </div>
           </Toolbar>
 
-          <List>
-            {handleSortHeroes(characters)?.map(item =>
-              !showFavortes && <BoxHome key={item.id} item={item} favorites={favorites} />
-            )}
+          {!loading ?
+            <List>
+              {handleSortHeroes(characters)?.map(item =>
+                !showFavortes && <BoxHome key={item.id} item={item} favorites={favorites} />
+              )}
 
-            {Object.keys(favorites).length > 0 ?
-              Object.keys(favorites).map((item, i) =>
-                showFavortes && <BoxHome key={favorites[item].id} item={favorites[item]} favorites={favorites} />
-              )
+              {Object.keys(favorites)?.length > 0 ?
+                Object.keys(favorites)?.map((item, i) =>
+                  showFavortes && <BoxHome key={favorites[item].id} item={favorites[item]} favorites={favorites} />
+                )
+              :
+                <li>Você não possui favoritos!</li>
+              }
+            </List>
             :
-              <li>Você não possui favoritos!</li>
-            }
-          </List>
+            <Loading><img src={icoloading} alt="Carregando..." /></Loading>
+          }
         </Content>
       </Container>
       <Footer />

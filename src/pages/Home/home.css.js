@@ -31,6 +31,14 @@ export const Header = styled.header`
     display: block;
     min-height: 500px;
   `;
+    export const Loading = styled.div`
+      margin: 50px auto;
+      max-width: 200px;
+      
+      img {
+        width: 200px;
+      }
+    `;
     export const List = styled.ul`
       display: grid;
       gap: 50px;
@@ -92,6 +100,16 @@ export const Header = styled.header`
 
         > div {
           display: flex;
+          align-items: center;
+
+          @media(max-width: ${theme.widths.small}) {
+            display: block;
+          }
+
+          > div {
+            display: flex;
+            align-items: center;
+          }
         }
 
         > p {
@@ -101,6 +119,10 @@ export const Header = styled.header`
     export const Sort = styled.div`
       color: ${ theme.colors.red };
       cursor: pointer;
+
+      @media(max-width: ${theme.widths.small}) {
+        margin: 10px 0;
+      }
 
       > svg {
         margin-right: 8px;
@@ -113,14 +135,16 @@ export const Header = styled.header`
       display: flex;
       margin: 0 20px 0 50px;
 
+      @media(max-width: ${theme.widths.small}) {
+        margin: 0 20px 0 0;
+      }
+
       svg {
         width: 60px;
       }
     `;
     export const Favorites = styled.div`
       color: ${ theme.colors.red };
-      position: relative;
-      top: 9px;
 
       > svg {
         margin-right: 8px;

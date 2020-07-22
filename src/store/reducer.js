@@ -2,7 +2,8 @@ const INITIAL_STATE = {
   loading: false,
   characters: [],
   favorites: {},
-  charDetail: {}
+  charDetail: {},
+  charDetailComics: {},
 }
 
 const GET_STATE = () => {
@@ -22,6 +23,11 @@ const SAVE_STATE = (data) => {
 
 export default (state = GET_STATE(), action) => {
   switch (action.type) {
+    case 'START_LOADING':
+      return {
+        ...state,
+        loading: true
+      };
     case 'GET_HEROES':
       SAVE_STATE({
         ...state,
@@ -30,13 +36,21 @@ export default (state = GET_STATE(), action) => {
 
       return {
         ...state,
-        characters: action?.  payload?.results
+        loading: false,
+        characters: action?.payload?.results
       };
     case 'GET_HERO':
-        return {
-          ...state,
-          charDetail: action?.payload?.results[0]
-        };
+      return {
+        ...state,
+        loading: false,
+        charDetail: action?.payload?.results[0]
+      };
+    case 'GET_HERO_COMICS':
+      return {
+        ...state,
+        loading: false,
+        charDetailComics: action?.payload?.results
+      };
     case 'ADD_FAVORITE_HEROES':
       const controlFavorites = (data) => {
         const newFavorites = { ...state.favorites };
