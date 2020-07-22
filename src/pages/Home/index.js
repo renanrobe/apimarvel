@@ -109,7 +109,7 @@ const Home = () => {
                   showFavortes && <BoxHome key={favorites[item].id} item={favorites[item]} favorites={favorites} />
                 )
               :
-                <li>Você não possui favoritos!</li>
+                showFavortes && <li>Você não possui favoritos!</li>
               }
             </List>
             :

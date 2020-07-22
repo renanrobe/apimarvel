@@ -49,7 +49,7 @@ export const Header = styled.header`
         grid-template-columns: repeat(3, 1fr);
       }
 
-      @media(max-width: ${theme.widths.Large}) {
+      @media(max-width: ${theme.widths.large}) {
         grid-template-columns: repeat(2, 1fr);
       }
 

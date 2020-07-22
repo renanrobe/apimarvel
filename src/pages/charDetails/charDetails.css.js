@@ -44,7 +44,7 @@ export const Container = styled.div`
         height: 300px;
         width: 300px;
 
-        @media(max-width: ${theme.widths.Large}) {
+        @media(max-width: ${theme.widths.large}) {
           display: none;
         }
       }
@@ -97,7 +97,7 @@ export const Container = styled.div`
       `;
 
     export const LastReleases = styled.div`
-      margin: 100px 0 0 50px;
+      padding: 100px 0 100px 50px; 
       max-width: ${theme.widths.extraLarge};
 
       h3 {
@@ -117,7 +117,7 @@ export const Container = styled.div`
           grid-template-columns: repeat(5, 1fr);
         }
   
-        @media(max-width: ${theme.widths.Large}) {
+        @media(max-width: ${theme.widths.large}) {
           grid-template-columns: repeat(4, 1fr);
         }
   
