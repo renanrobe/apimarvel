@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7cace7687ea509b890c771fccff59811",
+    "revision": "7200d489ee5a200f69fd7b44554f6374",
     "url": "/luizalabsfront/index.html"
   },
   {
-    "revision": "3514178a1d89d13e47f9",
+    "revision": "b407cf8e783b5ce30d97",
     "url": "/luizalabsfront/static/css/main.b9f5b5fd.chunk.css"
   },
   {
-    "revision": "38dee6a51869c06c44dc",
-    "url": "/luizalabsfront/static/js/2.264279ba.chunk.js"
+    "revision": "1a6d45b3375e8811802b",
+    "url": "/luizalabsfront/static/js/2.b0bf104a.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/luizalabsfront/static/js/2.264279ba.chunk.js.LICENSE.txt"
+    "url": "/luizalabsfront/static/js/2.b0bf104a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3514178a1d89d13e47f9",
-    "url": "/luizalabsfront/static/js/main.7d178859.chunk.js"
+    "revision": "b407cf8e783b5ce30d97",
+    "url": "/luizalabsfront/static/js/main.df543496.chunk.js"
   },
   {
     "revision": "ced1335ee67707bedfb7",
@@ -58,6 +58,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a196f94863ca8548c606ada8f2a7f030",
     "url": "/luizalabsfront/static/media/ico-video.a196f948.svg"
+  },
+  {
+    "revision": "768d8f8e08aba41858b396e9dd7fc801",
+    "url": "/luizalabsfront/static/media/loading.768d8f8e.gif"
   },
   {
     "revision": "60369301d1a7eee7895f1331f97f82a0",

@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/luizalabsfront/static/css/main.b9f5b5fd.chunk.css",
-    "main.js": "/luizalabsfront/static/js/main.7d178859.chunk.js",
-    "main.js.map": "/luizalabsfront/static/js/main.7d178859.chunk.js.map",
+    "main.js": "/luizalabsfront/static/js/main.df543496.chunk.js",
+    "main.js.map": "/luizalabsfront/static/js/main.df543496.chunk.js.map",
     "runtime-main.js": "/luizalabsfront/static/js/runtime-main.f68f5047.js",
     "runtime-main.js.map": "/luizalabsfront/static/js/runtime-main.f68f5047.js.map",
-    "static/js/2.264279ba.chunk.js": "/luizalabsfront/static/js/2.264279ba.chunk.js",
-    "static/js/2.264279ba.chunk.js.map": "/luizalabsfront/static/js/2.264279ba.chunk.js.map",
+    "static/js/2.b0bf104a.chunk.js": "/luizalabsfront/static/js/2.b0bf104a.chunk.js",
+    "static/js/2.b0bf104a.chunk.js.map": "/luizalabsfront/static/js/2.b0bf104a.chunk.js.map",
     "index.html": "/luizalabsfront/index.html",
-    "precache-manifest.e76e8569f31d94df0f9a139c0310132b.js": "/luizalabsfront/precache-manifest.e76e8569f31d94df0f9a139c0310132b.js",
+    "precache-manifest.9b0254b654542ca4bbe995b5337a6d55.js": "/luizalabsfront/precache-manifest.9b0254b654542ca4bbe995b5337a6d55.js",
     "service-worker.js": "/luizalabsfront/service-worker.js",
     "static/css/main.b9f5b5fd.chunk.css.map": "/luizalabsfront/static/css/main.b9f5b5fd.chunk.css.map",
-    "static/js/2.264279ba.chunk.js.LICENSE.txt": "/luizalabsfront/static/js/2.264279ba.chunk.js.LICENSE.txt",
+    "static/js/2.b0bf104a.chunk.js.LICENSE.txt": "/luizalabsfront/static/js/2.b0bf104a.chunk.js.LICENSE.txt",
     "static/media/ico-book.32bf5cc4.svg": "/luizalabsfront/static/media/ico-book.32bf5cc4.svg",
     "static/media/ico-heart-false.0ad1e3ae.svg": "/luizalabsfront/static/media/ico-heart-false.0ad1e3ae.svg",
     "static/media/ico-heart-true.148062e9.svg": "/luizalabsfront/static/media/ico-heart-true.148062e9.svg",
@@ -21,12 +21,13 @@
     "static/media/ico-toggle-off.b3447ab5.svg": "/luizalabsfront/static/media/ico-toggle-off.b3447ab5.svg",
     "static/media/ico-toggle-on.aab16b44.svg": "/luizalabsfront/static/media/ico-toggle-on.aab16b44.svg",
     "static/media/ico-video.a196f948.svg": "/luizalabsfront/static/media/ico-video.a196f948.svg",
+    "static/media/loading.gif": "/luizalabsfront/static/media/loading.768d8f8e.gif",
     "static/media/logo.60369301.svg": "/luizalabsfront/static/media/logo.60369301.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f68f5047.js",
-    "static/js/2.264279ba.chunk.js",
+    "static/js/2.b0bf104a.chunk.js",
     "static/css/main.b9f5b5fd.chunk.css",
-    "static/js/main.7d178859.chunk.js"
+    "static/js/main.df543496.chunk.js"
   ]
 }
