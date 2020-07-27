@@ -1,13 +1,13 @@
-Teste de Front-end Luizalabs
+Teste de Front-end utilizando API da Marvel
 ==============
 Esse projeto foi criado com [Create React App](https://github.com/facebook/create-react-app).
 
 ### Demonstração
-https://renanrobe.github.io/luizalabsfront/
+https://renanrobe.github.io/apimarvel/
 
 ### Instalação
 
-1. Faça o clone deste projeto com `https://github.com/renanrobe/luizalabs-front.git`
+1. Faça o clone deste projeto com `https://github.com/renanrobe/apimarvel.git`
 2. Entre na pasta do projeto e instale as dependências com `npm install`
 3. Rode a aplicação com `npm start`
 
