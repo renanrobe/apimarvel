@@ -1,5 +1,5 @@
 {
-  "name": "luizalabs-front",
+  "name": "apimarvel",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -24,7 +24,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://renanrobe.github.io/luizalabsfront",
+  "homepage": "https://renanrobe.github.io/apimarvel",
   "eslintConfig": {
     "extends": "react-app"
   },

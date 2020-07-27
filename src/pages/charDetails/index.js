@@ -56,7 +56,7 @@ const CharDetails = (props) => {
     <>
       <Container>
         <Header>
-          <a href="/luizalabsfront"><img src={logo} alt="Marvel" /></a>
+          <a href="/apimarvel"><img src={logo} alt="Marvel" /></a>
         </Header>
         <Content>
           {!loading ?

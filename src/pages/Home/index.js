@@ -66,7 +66,7 @@ const Home = () => {
     <>
       <Container>
         <Header>
-          <a href="/luizalabsfront"><Logo /></a>
+          <a href="/apimarvel"><Logo /></a>
           <Title>Explore o universo</Title>
           <Subtitle>
             Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama -
